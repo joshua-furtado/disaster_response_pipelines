@@ -4,6 +4,8 @@ from sklearn.multioutput import MultiOutputClassifier
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
+import nltk
+nltk.download(['punkt', 'stopwords', 'wordnet'])
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
@@ -13,9 +15,6 @@ import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
 import pickle
-
-import nltk
-nltk.download(['punkt', 'stopwords', 'wordnet'])
 
 
 def load_data(database_filepath):
